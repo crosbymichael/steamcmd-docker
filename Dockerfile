@@ -8,11 +8,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     lib32gcc1 \
     curl 
 
-RUN mkdir -p /home/games/steamcmd  && \
-    curl -s http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -v -C /home/games/steamcmd -zx && \
-    chown -R games:games /home/games
+RUN mkdir -p /home/daemon/steamcmd  && \
+    curl -s http://media.steampowered.com/installer/steamcmd_linux.tar.gz | tar -v -C /home/daemon/steamcmd -zx && \
+    chown -R daemon:daemon /home/daemon
 
-WORKDIR /home/games/steamcmd
-USER games
+WORKDIR /home/daemon/steamcmd
+USER daemon
 
-CMD ["./home/games/steamcmd/steamcmd.sh"]
+CMD ["/./home/daemon/steamcmd/steamcmd.sh"]
