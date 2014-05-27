@@ -15,4 +15,5 @@ RUN mkdir -p /home/daemon/steamcmd  && \
 WORKDIR /home/daemon/steamcmd
 USER daemon
 
-CMD ["/./home/daemon/steamcmd/steamcmd.sh"]
+ONBUILD ADD install.txt /home/daemon/steamcmd/install.txt
+ONBUILD RUN ./steamcmd.sh +runscript install.txt
