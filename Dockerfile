@@ -1,7 +1,7 @@
 # steamcmd run as user daemon
 # https://developer.valvesoftware.com/wiki/SteamCMD#Linux 
 
-FROM debian:jessie
+FROM ubuntu:15.04
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ca-certificates \
